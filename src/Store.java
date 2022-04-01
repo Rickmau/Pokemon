@@ -6,7 +6,7 @@ public class Store {
     //Available objects ---ArrayList<Objects>
 
     private String name;
-    private ArrayList<Object> availableObjects;
+    private ArrayList<Item> availableObjects;
 
 
     //Method
@@ -24,7 +24,7 @@ public class Store {
     }
     //Buy
     //Sell
-    public boolean userSell(Object object, int quantity){
+    public boolean userSell(Item object, int quantity){
         //Inverse logic of buy
         //Infinite money on the store
         //Receive object and give money to the user
