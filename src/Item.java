@@ -4,10 +4,10 @@ public class Item {
     //Quantity -- Int
     //Type ------ String
 
-    private double price;
-    private int quantity;
-    private String name;
-    private String type;
+    protected double price;
+    protected int quantity;
+    protected String name;
+    protected String type;
 
     public double getPrice() {
         return price;
