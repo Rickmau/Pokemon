@@ -5,7 +5,30 @@ public class Potion extends Item{
     //Effect --------- String
     //Duration ------- Int
 
+    String effect;
+    int Duration;
 
+    public String getEffect() {
+        return effect;
+    }
+
+    public void setEffect(String effect) {
+        this.effect = effect;
+    }
+
+    public int getDuration() {
+        return Duration;
+    }
+
+    public void setDuration(int duration) {
+        Duration = duration;
+    }
+
+    public Potion(double price, int quantity, String name, String type, String effect, int duration) {
+        super(price, quantity, name, type);
+        this.effect = effect;
+        Duration = duration;
+    }
 
     //Use
         //If it cures

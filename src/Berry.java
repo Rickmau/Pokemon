@@ -5,7 +5,30 @@ public class Berry extends Item{
     //Effect --------- String
     //Duration ------- Int
 
+    String BerryEffect;
+    int BerryDuration;
 
+    public String getBerryEffect() {
+        return BerryEffect;
+    }
+
+    public void setBerryEffect(String berryEffect) {
+        BerryEffect = berryEffect;
+    }
+
+    public int getBerryDuration() {
+        return BerryDuration;
+    }
+
+    public void setBerryDuration(int berryDuration) {
+        BerryDuration = berryDuration;
+    }
+
+    public Berry(double price, int quantity, String name, String type, String berryEffect, int berryDuration) {
+        super(price, quantity, name, type);
+        BerryEffect = berryEffect;
+        BerryDuration = berryDuration;
+    }
 
     //Use
     //If it cures
