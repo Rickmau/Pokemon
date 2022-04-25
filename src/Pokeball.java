@@ -1,7 +1,7 @@
 public class Pokeball extends Item{
     //Effectivity ------- Double
 
-    private double effectivity;
+    double effectivity;
 
     public Pokeball(double price, int quantity, String name, String type, double effectivity) {
         super(price, quantity, name, type);

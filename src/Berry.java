@@ -5,8 +5,8 @@ public class Berry extends Item{
     //Effect --------- String
     //Duration ------- Int
 
-    String BerryEffect;
-    int BerryDuration;
+    private String BerryEffect;
+    private int BerryDuration;
 
     public String getBerryEffect() {
         return BerryEffect;
@@ -32,9 +32,9 @@ public class Berry extends Item{
 
     //Use
     //If it cures
-    //Increase 20 hp
+        //Increase 20 hp
     //If it increases the strength
-    //Increase 20 of strength
+        //Increase 20 of strength
     //If it is of speed
-    //Increase 20 of speed
+        //Increase 20 of speed
 }

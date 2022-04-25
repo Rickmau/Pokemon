@@ -5,8 +5,8 @@ public class Potion extends Item{
     //Effect --------- String
     //Duration ------- Int
 
-    String effect;
-    int Duration;
+    private String effect;
+    private int Duration;
 
     public String getEffect() {
         return effect;
@@ -31,6 +31,7 @@ public class Potion extends Item{
     }
 
     //Use
+
         //If it cures
             //Increase 20 hp
         //If it increases the strength
