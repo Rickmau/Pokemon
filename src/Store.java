@@ -37,8 +37,9 @@ public class Store {
         }else{
             if (availableObjects.get(objectIndex).quantity >= quantity){
                 double totalPrice = quantity * availableObjects.get(objectIndex).price;
-                if (totalPrice >= money){
-                    System.out.println("Sold");
+                if (money >= totalPrice){
+                    System.out.println("You are buying " + quantity + " " +availableObjects.get(objectIndex).name + " por $" + totalPrice);
+                    System.out.println("Your spare cash is: " + (totalPrice - money));
                     return true;
                 }else{
                     System.out.println("There isn't enough money, missing: " + (totalPrice - money));

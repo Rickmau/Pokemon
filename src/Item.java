@@ -47,4 +47,13 @@ public class Item {
         this.name = name;
         this.type = type;
     }
+
+    public String toString(){
+        return this.getClass().toString().substring(5) +
+                " {price" + price +
+                ", quantity=" + quantity +
+                ", name=" + name + '\'' +
+                ", type=" + type + '\'' +
+                "}";
+    }
 }
