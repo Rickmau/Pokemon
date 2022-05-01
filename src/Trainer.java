@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Trainer extends Character{
     //Region ---------- String
@@ -72,6 +73,44 @@ public class Trainer extends Character{
         this.money = money;
     }
 
+    //Throw item
+        //Show available items
+        //The user selects the index of the item to throw(erase)
+    public void throwItem(){
+        Scanner data = new Scanner(System.in);
+        if (backpack.size() <= 0){
+            System.out.println("You don´t have items to throw");
+        }else {
+            System.out.println("Available items: ");
+            for (int i = 0; i < backpack.size(); i++) {
+                System.out.println(i+1 + ". " + backpack.get(i));
+            }
+            System.out.print("Input the number of the item you want to throw: ");
+            int itemIndex = data.nextInt();
+            backpack.remove(itemIndex-1);
+            System.out.println("Item threw successfully");
+        }
+    }
+
+    //Exchange Pokemon
+        //Show available pokemons of Player 1
+            //Select pokemon from Player 1 you want to change
+        //Show available pokemons of Player 2
+            //Select pokemon you want from Player 2
+        //Show both pokemons to Player 2
+            //Player 2 decides if exchanges pokemons or not
+            //If (Answer == true){
+            //  Use an auxiliary to save pokemon from Player 1 and erase that pokemon from the ArrayList
+            //  Insert the pokemon from the auxiliary in Player's 2 Pokedex
+            //  Save the pokemon to exchange from Player 2 in the auxiliary and erase that pokemon from the ArrayList
+            //  Insert the pokemon from the auxiliary in Player's 1 Pokedex
+        //Launch a message when the exchange has been successfully
+
+
+    public String exchange (){
+
+        return null;
+    }
     //Fight ----------- Abstraction Implemented
         //Choose a Pokemon from the Pokedex
             //If the HP is over 15
