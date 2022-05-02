@@ -66,9 +66,16 @@ public class Store {
     public boolean userSell(Item item, int quantity){
         //Inverse logic of buy
         //The unique exception that the user can't sell berry's
-        System.out.println(item.getClass());
         //Infinite money on the store
         //Receive object and give money to the user
+        System.out.println(item.getClass());
+        if(item.getClass() == Berry.class){
+            System.out.println("You can´t sell berry's to the store");
+            return false;
+        } else {
+
+        }
+
         return false;
     }
 

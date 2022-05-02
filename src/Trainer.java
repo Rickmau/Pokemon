@@ -105,10 +105,11 @@ public class Trainer extends Character{
             //  Save the pokemon to exchange from Player 2 in the auxiliary and erase that pokemon from the ArrayList
             //  Insert the pokemon from the auxiliary in Player's 1 Pokedex
         //Launch a message when the exchange has been successfully
-
-
     public String exchange (){
+        System.out.println("Pokemons from player " + Trainer.class.getName() + ": ");
+        for (int i = 0; i <= pokedex.size(); i++) {
 
+        }
         return null;
     }
     //Fight ----------- Abstraction Implemented
