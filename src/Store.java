@@ -73,10 +73,18 @@ public class Store {
             System.out.println("You can´t sell berry's to the store");
             return false;
         } else {
-
+            for (Item element : availableObjects) {
+                if (element.name.equals(item.name)){
+                    element.quantity += quantity;
+                    System.out.println("Buying item");
+                    return true;
+                }
+            }
+            availableObjects.add(item);
+            availableObjects.get(availableObjects.size()-1).quantity = quantity;
+            System.out.println("Buying new item on the store");
+            return true;
         }
-
-        return false;
     }
 
     public void showAvailable(){
