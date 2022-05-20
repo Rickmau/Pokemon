@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Trainer extends Character{
@@ -105,12 +106,56 @@ public class Trainer extends Character{
             //  Save the pokemon to exchange from Player 2 in the auxiliary and erase that pokemon from the ArrayList
             //  Insert the pokemon from the auxiliary in Player's 1 Pokedex
         //Launch a message when the exchange has been successfully
-    public String exchange (){
-        System.out.println("Pokemons from player " + Trainer.class.getName() + ": ");
-        for (int i = 0; i <= pokedex.size(); i++) {
-
+    public boolean exchange (ArrayList<Pokemon> pokedexCont){
+        System.out.println("Available opposite pokemons are: ");
+        int index = 1;
+        for (Pokemon pokemon : pokedexCont){
+            System.out.println(index + " -");
+            System.out.println(pokemon);
+            index++;
         }
-        return null;
+        Scanner data = new Scanner(System.in);
+        System.out.println("Choose opposite pokemon");
+        int chooseOppo = data.nextInt()-1;
+        showPokedex();
+        System.out.println("Choose own pokemon");
+        int myPokemon = data.nextInt()-1;
+        System.out.println("I change mine for " + pokedex.get(myPokemon));
+        boolean accept = false;
+        Random random = new Random();
+        int value = random.nextInt(5)+1;
+        accept = (value == 1);
+        if (accept){
+            Pokemon aux = pokedex.get(myPokemon);
+            pokedex.remove(myPokemon);
+            pokedex.add(pokedexCont.get(chooseOppo));
+            pokedexCont.remove(chooseOppo);
+            pokedexCont.add(aux);
+            System.out.println("Successful exchange");
+            return true;
+        }else{
+            System.out.println("Unsuccessful exchange");
+            return false;
+        }
+    }
+
+    public void showBackpack(){
+        int index = 1;
+        System.out.println("Available objects are: ");
+        for (Object object: backpack) {
+            System.out.println(index + " - ");
+            System.out.println(object);
+            index++;
+        }
+    }
+    public void showPokedex(){
+        int index = 1;
+        System.out.println("Available Pokemons are: ");
+        for (Pokemon pokemon: pokedex) {
+            System.out.println(index + " - ");
+            System.out.println(pokemon);
+            index++;
+        }
     }
     //Fight ----------- Abstraction Implemented
         //Choose a Pokemon from the Pokedex
@@ -120,4 +165,5 @@ public class Trainer extends Character{
 
         //Call to the fight method of the Pokemon
         //
+
 }
