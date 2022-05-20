@@ -2,6 +2,8 @@ public class Berry extends Item{
     public Berry(double price, int quantity, String name, String type) {
         super(price, quantity, name, type);
     }
+
+
     //Effect --------- String
     //Duration ------- Int
 
@@ -30,6 +32,21 @@ public class Berry extends Item{
         BerryDuration = berryDuration;
     }
 
+    @Override
+    public boolean Use(Pokemon pokemon) {
+        if (this.BerryEffect.equals("health")){
+            pokemon.setHp(pokemon.getHp()+20);
+            return true;
+        }else if(this.BerryEffect.equals("strength")){
+            pokemon.setStrenght(pokemon.getStrenght()+20);
+            return true;
+        }else if(this.BerryEffect.equals("speed")){
+            pokemon.setSpeed(pokemon.getSpeed()+20);
+            return true;
+        }else{
+            return false;
+        }
+    }
     //Use
     //If it cures
         //Increase 20 hp

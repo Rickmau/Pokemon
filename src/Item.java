@@ -1,4 +1,4 @@
-public class Item {
+public abstract class Item {
     //Price ----- Double
     //Name ------ String
     //Quantity -- Int
@@ -56,4 +56,8 @@ public class Item {
                 ", type=" + type + '\'' +
                 "}";
     }
+
+    //Use
+    public abstract boolean Use(Pokemon pokemon);
+
 }
