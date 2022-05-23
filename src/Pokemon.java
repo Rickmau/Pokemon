@@ -87,4 +87,8 @@ public class Pokemon {
         this.strenght = strenght;
         this.speed = speed;
     }
+
+    public boolean Fight(Pokemon pokemonCont) {
+        return false;
+    }
 }

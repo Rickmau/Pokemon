@@ -43,4 +43,8 @@ public abstract class Character {
     //fight --------- Abstract
 
     public abstract boolean Figth(Pokemon pokemon);
+
+    //Call to the fight method of the Pokemon
+    //
+    public abstract boolean Fight(Pokemon pokemonCont);
 }

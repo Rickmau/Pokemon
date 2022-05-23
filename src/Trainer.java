@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import static javax.swing.UIManager.get;
+
 public class Trainer extends Character{
     //Region ---------- String
     //PokemonPet ------ Pokemon
@@ -117,7 +119,8 @@ public class Trainer extends Character{
         Scanner data = new Scanner(System.in);
         System.out.println("Choose opposite pokemon");
         int chooseOppo = data.nextInt()-1;
-        showPokedex();
+        ArrayList<Pokemon> fighters = new ArrayList<>();
+        showPokedex(fighters);
         System.out.println("Choose own pokemon");
         int myPokemon = data.nextInt()-1;
         System.out.println("I change mine for " + pokedex.get(myPokemon));
@@ -148,7 +151,7 @@ public class Trainer extends Character{
             index++;
         }
     }
-    public void showPokedex(){
+    public void showPokedex(ArrayList<Pokemon> fighters){
         int index = 1;
         System.out.println("Available Pokemons are: ");
         for (Pokemon pokemon: pokedex) {
@@ -163,13 +166,64 @@ public class Trainer extends Character{
                 //Choose 2 doves and 1 weak randomly
             //If don´t have doves, choose 3 randomly
 
-        //Call to the fight method of the Pokemon
+    @Override
+    public boolean Figth(Pokemon pokemon) {
+        return false;
+    }
+
+    //Call to the fight method of the Pokemon
         //
         @Override
-        public boolean Figth(Pokemon pokemonCont) {
-        //Choose pokemons to fight
+        public boolean Fight(Pokemon pokemonCont) {
+            //Choose pokemons to fight
             ArrayList<Pokemon> fighters = new ArrayList<>();
             //Show pokedex
+            showPokedex(fighters);
+            System.out.println("Choose 3 pokemons");
+            Scanner data = new Scanner(System.in);
+            for (int i = 1; i <= 3; i++) {
+                System.out.println("Input the pokemon");
+                fighters.add(pokedex.get(data.nextInt() - 1));
+            }
+
+            int answer = 0;
+
+            do {
+
+                System.out.println("1. Fight");
+                System.out.println("2. Use berry/potion");
+                System.out.println("3. Escape");
+                answer = data.nextInt();
+                if(fighters.size() != 0){
+                    if (answer == 1) {
+                        System.out.println("Choose pokemon to fight");
+                        showPokedex(fighters);
+                        int selection = data.nextInt();
+                        fighters.get(selection).Fight(pokemonCont);
+
+                        if(!fighters.get(selection).Fight(pokemonCont)){
+                            fighters.remove(selection);
+                        }else{
+                            return true;
+                        }
+
+                    } else if (answer == 2) {
+                        showBackpack();
+                        System.out.println("Choose berry or potion for your pokemon");
+                        int selectionOfBerry = data.nextInt();
+
+                        System.out.println("Choose pokemon to give berry or potion");
+                        showPokedex(fighters);
+                        backpack,get(selectionOfBerry-1).Use(fighters.get(data.nextInt()));
+
+                    } else {
+                        System.out.println("Escaping...");
+                        return false;
+                    }
+                }else{
+                    return false;
+                }
+            } while (answer != 0);
             //User selects 3 pokemons
             //Those 3 pokemons we add them to fighters
 
