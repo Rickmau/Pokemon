@@ -165,5 +165,14 @@ public class Trainer extends Character{
 
         //Call to the fight method of the Pokemon
         //
+        @Override
+        public boolean Figth(Pokemon pokemonCont) {
+        //Choose pokemons to fight
+            ArrayList<Pokemon> fighters = new ArrayList<>();
+            //Show pokedex
+            //User selects 3 pokemons
+            //Those 3 pokemons we add them to fighters
 
+            return false;
+        }
 }

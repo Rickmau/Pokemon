@@ -1,4 +1,4 @@
-public class Character {
+public abstract class Character {
     //Atributes
     //Name ---------- String protected
     //Level --------- Int protected
@@ -41,4 +41,6 @@ public class Character {
 
 
     //fight --------- Abstract
+
+    public abstract boolean Figth(Pokemon pokemon);
 }
