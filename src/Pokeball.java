@@ -23,4 +23,15 @@ public class Pokeball extends Item{
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Pokeball{" +
+                "price=" + price +
+                ", quantity=" + quantity +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", effectivity=" + effectivity +
+                '}';
+    }
 }

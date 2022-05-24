@@ -229,4 +229,19 @@ public class Trainer extends Character{
 
             return false;
         }
+
+    @Override
+    public String toString() {
+        return "Trainer{" +
+                "name='" + name + '\'' +
+                ", level=" + level +
+                ", gender=" + gender +
+                ", region='" + region + '\'' +
+                ", petPokemon=" + petPokemon +
+                ", tournamentWon=" + tournamentWon +
+                ", pokedex=" + pokedex +
+                ", backpack=" + backpack +
+                ", money=" + money +
+                '}';
+    }
 }

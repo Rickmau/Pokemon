@@ -96,4 +96,12 @@ public class Store {
             index++;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Store{" +
+                "name='" + name + '\'' +
+                ", availableObjects=" + availableObjects +
+                '}';
+    }
 }

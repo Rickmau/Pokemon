@@ -91,4 +91,18 @@ public class Pokemon {
     public boolean Fight(Pokemon pokemonCont) {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "type='" + type + '\'' +
+                ", skill=" + skill +
+                ", hp=" + hp +
+                ", isLegendary=" + isLegendary +
+                ", weakAgainst='" + weakAgainst + '\'' +
+                ", strongAgainst='" + strongAgainst + '\'' +
+                ", strenght=" + strenght +
+                ", speed=" + speed +
+                '}';
+    }
 }
