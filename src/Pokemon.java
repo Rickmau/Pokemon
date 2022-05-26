@@ -1,4 +1,4 @@
-public class Pokemon extends Character {
+public class Pokemon {
     //Type --------- String
     //Skills ------- skill
     //isLegendary -- boolean
@@ -11,8 +11,7 @@ public class Pokemon extends Character {
     private String weakAgainst;
     private String strongAgainst;
     private int strenght;
-    private int speed;
-    private int baseAta;
+    private int  speed;
 
     public String getType() {
         return type;
@@ -78,17 +77,7 @@ public class Pokemon extends Character {
         this.speed = speed;
     }
 
-    public int getBaseAta() {
-        int BaseAta = 0;
-        return BaseAta;
-    }
-
-    public void setBaseAta(int baseAta) {
-        int BaseAta = baseAta;
-    }
-
-    public Pokemon(String type, Skills skill, int hp, boolean isLegendary, String weakAgainst, String strongAgainst, int strenght, int speed, int baseAta) {
-        super();
+    public Pokemon(String type, Skills skill, int hp, boolean isLegendary, String weakAgainst, String strongAgainst, int strenght, int speed) {
         this.type = type;
         this.skill = skill;
         this.hp = hp;
@@ -97,42 +86,9 @@ public class Pokemon extends Character {
         this.strongAgainst = strongAgainst;
         this.strenght = strenght;
         this.speed = speed;
-        this.baseAta = baseAta;
-    }
-
-    @Override
-    public boolean Figth(Pokemon pokemonCont) {
-        return false;
     }
 
     public boolean Fight(Pokemon pokemonCont) {
-        if (this.strongAgainst.equals(pokemonCont.getType())) {
-            this.skill.setbaseAta(this.skill.getbaseAta() + 20);
-            pokemonCont.getSkill().setbaseAta(pokemonCont.getSkill().getbaseAta() - 20);
-        }else if(pokemonCont.getStrongAgainst().equals(this.type)){
-            this.skill.setbaseAta(this.skill.getbaseAta() - 30);
-            pokemonCont.getSkill().setbaseAta(pokemonCont.getSkill().getbaseAta() + 20);
-        }else{
-            
-        }
-
-        do {
-            if (this.speed > pokemonCont.speed) {
-                pokemonCont.setHp(pokemonCont.getHp() - this.getBaseAta());
-                if (pokemonCont.getHp() <= 0) {
-                    return true;
-                }
-            } else {
-                this.hp -= pokemonCont.getSkill().getbaseAta();
-                if (this.hp <= 0) {
-                    return false;
-                } else {
-                    pokemonCont.setHp(pokemonCont.getHp() - this.getBaseAta());
-                    if (pokemonCont.getHp() <= 0) {
-                        return true;
-                    }
-                }
-            }
-        }while (true);
+        return false;
     }
 }

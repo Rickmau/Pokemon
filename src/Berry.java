@@ -47,4 +47,16 @@ public class Berry extends Item{
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Berry{" +
+                "BerryEffect='" + BerryEffect + '\'' +
+                ", BerryDuration=" + BerryDuration +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }

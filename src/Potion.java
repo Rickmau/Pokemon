@@ -47,4 +47,16 @@ public class Potion extends Item{
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "Potion{" +
+                "price=" + price +
+                ", quantity=" + quantity +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", effect='" + effect + '\'' +
+                ", Duration=" + Duration +
+                '}';
+    }
 }
