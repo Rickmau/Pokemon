@@ -8,6 +8,10 @@ public abstract class Character {
     protected int level;
     protected char gender;
 
+    public Character() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -40,11 +44,8 @@ public abstract class Character {
     }
 
 
-    //fight --------- Abstract
-
     public abstract boolean Figth(Pokemon pokemon);
 
-    //Call to the fight method of the Pokemon
-    //
+    //fight --------- Abstract
     public abstract boolean Fight(Pokemon pokemonCont);
 }

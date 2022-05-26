@@ -166,6 +166,7 @@ public class Trainer extends Character{
                 //Choose 2 doves and 1 weak randomly
             //If don´t have doves, choose 3 randomly
 
+
     @Override
     public boolean Figth(Pokemon pokemon) {
         return false;
@@ -214,7 +215,7 @@ public class Trainer extends Character{
 
                         System.out.println("Choose pokemon to give berry or potion");
                         showPokedex(fighters);
-                        backpack,get(selectionOfBerry-1).Use(fighters.get(data.nextInt()));
+                        backpack,get(selectionOfBerry-1).usar(fighters.get(data.nextInt()));
 
                     } else {
                         System.out.println("Escaping...");
@@ -224,8 +225,6 @@ public class Trainer extends Character{
                     return false;
                 }
             } while (answer != 0);
-            //User selects 3 pokemons
-            //Those 3 pokemons we add them to fighters
 
             return false;
         }
