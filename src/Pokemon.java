@@ -89,6 +89,33 @@ public class Pokemon {
     }
 
     public boolean Fight(Pokemon pokemonCont) {
-        return false;
+        if(this.strongAgainst.equals(pokemonCont.getType())){
+            this.skill.setbaseAta(this.skill.getbaseAta() + 20);
+            pokemonCont.getSkill().setbaseAta(pokemonCont.getSkill().getbaseAta() - 20);
+        }else if(pokemonCont.getStrongAgainst().equals(this.type)){
+            this.skill.setbaseAta(this.skill.getbaseAta() -30);
+            pokemonCont.getSkill().setbaseAta(pokemonCont.getSkill().getbaseAta() + 20);
+        }else{
+
+        }
+
+        do {
+            if(this.speed >= pokemonCont.speed){
+                pokemonCont.setHp(pokemonCont.getHp() - this.skill.getbaseAta());
+                if (pokemonCont.getHp() <= 0){
+                    return true;
+                }else{
+                    this.hp -= pokemonCont.getSkill().getbaseAta();
+                    if(this.hp <= 0){
+                        return false;
+                    }
+                }
+            }else{
+                this.hp -= pokemonCont.getSkill().getbaseAta();
+                if(this.hp <= 0){
+                    return false;
+                }
+            }
+        }while(true);
     }
 }
