@@ -215,7 +215,7 @@ public class Trainer extends Character{
 
                         System.out.println("Choose pokemon to give berry or potion");
                         showPokedex(fighters);
-                        backpack,get(selectionOfBerry-1).usar(fighters.get(data.nextInt()));
+                        //backpack,get(selectionOfBerry-1).usar(fighters.get(data.nextInt()));
 
                     } else {
                         System.out.println("Escaping...");

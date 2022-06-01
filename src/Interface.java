@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public interface Interface {
-    void playedTime(long initialTime, long finalTime);
+    void playedTime(long initialTime, long finalTime) throws InterruptedException;
 
     void showMenu();
 
