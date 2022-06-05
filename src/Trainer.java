@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -95,6 +96,17 @@ public class Trainer extends Character{
         }
     }
 
+    public boolean throwItem(int index){
+        try{
+            backpack.remove(index);
+            return false;
+
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("The object doesn't exists");
+            return false;
+        }
+    }
+
     //Exchange Pokemon
         //Show available pokemons of Player 1
             //Select pokemon from Player 1 you want to change
@@ -176,15 +188,29 @@ public class Trainer extends Character{
         //
         @Override
         public boolean Fight(Pokemon pokemonCont) {
-            //Choose pokemons to fight
             ArrayList<Pokemon> fighters = new ArrayList<>();
-            //Show pokedex
-            showPokedex(fighters);
             System.out.println("Choose 3 pokemons");
+            showPokedex(fighters);
             Scanner data = new Scanner(System.in);
             for (int i = 1; i <= 3; i++) {
                 System.out.println("Input the pokemon");
-                fighters.add(pokedex.get(data.nextInt() - 1));
+                try{
+
+                    int index = data.nextInt();
+                    fighters.add(pokedex.get(data.nextInt() - 1));
+
+                }catch (InputMismatchException e){
+
+                    System.out.println("Input a number");
+                    data.nextLine();
+                    i--;
+
+                }catch (IndexOutOfBoundsException e){
+
+                    System.out.println("The pokemon doesn't exists, input an existent one");
+                    i--;
+
+                }
             }
 
             int answer = 0;

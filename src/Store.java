@@ -32,33 +32,39 @@ public class Store {
     //Method
     public boolean userBuy(double money,int quantity, int objectIndex){
         //Approve that are sufficient objects of the required type
-        if (objectIndex > availableObjects.size()){
-            System.out.println("Error. The object doesn't exists");
-        }else{
-            if (availableObjects.get(objectIndex).quantity >= quantity){
-                double totalPrice = quantity * availableObjects.get(objectIndex).price;
-                if (money >= totalPrice){
-                    System.out.println("You are buying " + quantity + " " +availableObjects.get(objectIndex).name + " por $" + totalPrice);
-                    System.out.println("Your spare cash is: " + (totalPrice - money));
-                    return true;
+        //We have the quantity and object
+        //If we have money, approve that is sufficient
+        // If it is sufficient, we sell
+        //If else
+        //Show that the user doesn't have the sufficient money
+        //If not
+        //We make an exception that we don´t the quantity requested
+        //Repeat the question
+
+        try {
+            if (objectIndex > availableObjects.size()){
+                System.out.println("Error. The object doesn't exists");
+            }else{
+                if (availableObjects.get(objectIndex).quantity >= quantity){
+                    double totalPrice = quantity * availableObjects.get(objectIndex).price;
+                    if (money >= totalPrice){
+                        System.out.println("You are buying " + quantity + " " +availableObjects.get(objectIndex).name + " por $" + totalPrice);
+                        System.out.println("Your spare cash is: " + (totalPrice - money));
+                        return true;
+                    }else{
+                        System.out.println("There isn't enough money, missing: " + (totalPrice - money));
+                        return false;
+                    }
                 }else{
-                    System.out.println("There isn't enough money, missing: " + (totalPrice - money));
+                    System.out.println("We don't have the requested quantity");
                     return false;
                 }
-            }else{
-                System.out.println("We don't have the requested quantity");
-                return false;
             }
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("The item doesn't exists");
+            return false;
         }
 
-        //We have the quantity and object
-            //If we have money, approve that is sufficient
-                // If it is sufficient, we sell
-            //If else
-                //Show that the user doesn't have the sufficient money
-            //If not
-                //We make an exception that we don´t the quantity requested
-                //Repeat the question
         return false;
     }
     //Buy

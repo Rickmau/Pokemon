@@ -77,7 +77,7 @@ public class Pokemon {
         this.speed = speed;
     }
 
-    public Pokemon(String type, Skills skill, int hp, boolean isLegendary, String weakAgainst, String strongAgainst, int strenght, int speed) {
+    public Pokemon(String type, int level, int gender, String s, Skills skill, int hp, boolean isLegendary, String weakAgainst, String strongAgainst, int strenght, int speed) {
         this.type = type;
         this.skill = skill;
         this.hp = hp;
